@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": "src",
     "outDir": "dist",
-    "moduleResolution": "Node",
     "target": "ESNext",
+    "moduleResolution": "Node",
     "typeRoots": ["node_modules/@types/"],
     "paths": {
       "*": ["node_modules/"],
