@@ -1,21 +1,18 @@
-import { Router } from 'express'
-import { ObjectLiteral } from 'typeorm'
-
-import { Container, Injectable, Module, TypeContainer } from '@helpers/helper.dependecyInjection'
-import { UsersModel } from '@models/model.users'
+import { Container, Injectable, Module, Router } from '@helpers/helper.di'
 import { UsersModule } from '@modules/module.users'
+import { PromotionsModule } from '@modules/module.promotions'
 
 @Module([
-  {
-    token: 'UsersModel',
-    useFactory: (): ObjectLiteral => {
-      return TypeContainer.get(UsersModel).repository
-    }
-  },
   {
     token: 'UsersModule',
     useFactory: (): Router => {
       return Container.resolve(UsersModule).route.main()
+    }
+  },
+  {
+    token: 'PromotionsModule',
+    useFactory: (): Router => {
+      return Container.resolve(PromotionsModule).route.main()
     }
   }
 ])

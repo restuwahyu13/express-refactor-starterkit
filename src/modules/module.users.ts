@@ -1,12 +1,19 @@
+import { Module, Injectable, Inject, Context, ObjectLiteral } from '@helpers/helper.di'
 import { UsersService } from '@services/service.users'
 import { UsersController } from '@controllers/controller.users'
 import { UsersRoute } from '@routes/route.users'
-import { Module, Mutex, Injectable, Inject } from '@helpers/helper.dependecyInjection'
+import { UsersModel } from '@models/model.users'
 
 @Module([
-  { token: 'UsersService', useClass: Mutex(() => UsersService) },
-  { token: 'UsersController', useClass: Mutex(() => UsersController) },
-  { token: 'UsersRoute', useClass: Mutex(() => UsersRoute) }
+  { token: 'UsersService', useClass: UsersService },
+  { token: 'UsersController', useClass: UsersController },
+  { token: 'UsersRoute', useClass: UsersRoute },
+  {
+    token: 'UsersModel',
+    useFactory: (): ObjectLiteral => {
+      return Context.get(UsersModel).repository
+    }
+  }
 ])
 @Injectable()
 export class UsersModule {

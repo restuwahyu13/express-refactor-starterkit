@@ -32,8 +32,8 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "importHelpers": true,
-    "isolatedModules": true,
     "noUnusedLocals": true,
+    "isolatedModules": false,
     "noUnusedParameters": false,
     "noImplicitAny": false,
     "noImplicitThis": false
