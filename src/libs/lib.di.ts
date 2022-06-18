@@ -8,7 +8,6 @@ export {
   injectWithTransform as InjectTransform,
   delay as Mutex,
   registry as Module,
-  registry as Registry,
   container as Container
 } from 'tsyringe'
 import { Transform as Transforms } from 'tsyringe/dist/typings/types'
