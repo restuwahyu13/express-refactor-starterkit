@@ -3,6 +3,7 @@
     "baseUrl": "src",
     "outDir": "dist",
     "target": "ESNext",
+    "module": "CommonJS",
     "moduleResolution": "Node",
     "typeRoots": ["node_modules/@types/"],
     "paths": {
