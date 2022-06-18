@@ -26,7 +26,7 @@ class App {
   }
 
   private async routes(): Promise<void> {
-    this.app.use(this.users.route.routers())
+    this.app.use(this.users.route.main())
   }
 
   private async run(): Promise<void> {

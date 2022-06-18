@@ -11,7 +11,7 @@ export class UsersRoute {
     this.router = Router({ strict: true, caseSensitive: true })
   }
 
-  routers(): Router {
+  main(): Router {
     this.router.get('/', (req: Request, res: Response) => this.controller.ping(req, res))
 
     return this.router
