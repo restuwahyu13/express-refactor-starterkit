@@ -27,7 +27,7 @@ class App {
 
   private async config(): Promise<void> {
     this.app.disable('x-powered-by')
-    Container.resolve(AppModule)
+    Container.resolve<AppModule>(AppModule)
   }
 
   private async routes(): Promise<void> {
