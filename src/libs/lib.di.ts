@@ -4,7 +4,7 @@ export {
   autoInjectable as Controller,
   autoInjectable as Route,
   inject as Inject,
-  injectAll as Injects,
+  injectAll as InjectAll,
   injectWithTransform as InjectTransform,
   delay as Delay,
   registry as Module,
