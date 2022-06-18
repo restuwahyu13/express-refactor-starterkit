@@ -1,4 +1,4 @@
-import { Router, Request, Response } from 'express'
+import { Router } from 'express'
 
 import { UsersController } from '@controllers/controller.users'
 import { Inject, Route } from '@libs/lib.di'
@@ -12,7 +12,7 @@ export class UsersRoute {
   }
 
   main(): Router {
-    this.router.get('/', (req: Request, res: Response) => this.controller.getAllUsers(req, res))
+    this.router.get('/', this.controller.getAllUsers())
 
     return this.router
   }
