@@ -1,7 +1,7 @@
 import { Router } from 'express'
 
 import { UsersController } from '@controllers/controller.users'
-import { Inject, Route } from '@libs/lib.di'
+import { Inject, Route } from '@helpers/helper.dependecyInjection'
 
 @Route()
 export class UsersRoute {

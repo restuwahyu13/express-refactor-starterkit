@@ -1,4 +1,4 @@
-import { Model, InjectRepository, Repository } from '@libs/lib.di'
+import { Model, InjectRepository, Repository } from  '@helpers/helper.dependecyInjection'
 import { Users } from '@entities/entitie.users'
 
 @Model()

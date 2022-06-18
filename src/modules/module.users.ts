@@ -1,7 +1,7 @@
 import { UsersService } from '@services/service.users'
 import { UsersController } from '@controllers/controller.users'
 import { UsersRoute } from '@routes/route.users'
-import { Module, Mutex, Injectable, Inject } from '@libs/lib.di'
+import { Module, Mutex, Injectable, Inject } from '@helpers/helper.dependecyInjection'
 
 @Module([
   { token: 'UsersService', useClass: Mutex(() => UsersService) },

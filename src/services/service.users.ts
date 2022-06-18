@@ -2,7 +2,7 @@ import { Repository } from 'typeorm'
 import { StatusCodes as status } from 'http-status-codes'
 
 import { Users } from '@entities/entitie.users'
-import { Inject, Service } from '@libs/lib.di'
+import { Inject, Service } from '@helpers/helper.dependecyInjection'
 import { apiResponse } from '@helpers/helper.apiResponse'
 
 @Service()

@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import { ObjectLiteral } from 'typeorm'
 
-import { Container, Injectable, Module, TypeContainer } from '@libs/lib.di'
+import { Container, Injectable, Module, TypeContainer } from '@helpers/helper.dependecyInjection'
 import { UsersModel } from '@models/model.users'
 import { UsersModule } from '@modules/module.users'
 

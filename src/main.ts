@@ -5,7 +5,7 @@ import http, { Server } from 'http'
 import { Connection, createConnection, useContainer } from 'typeorm'
 import { Container as TypeContainer } from 'typeorm-typedi-extensions'
 
-import { Container, Injectable } from '@libs/lib.di'
+import { Container, Injectable } from '@helpers/helper.dependecyInjection'
 import { AppModule } from '@/app.module'
 
 @Injectable()

@@ -2,7 +2,7 @@ import { Request, Response, Handler, NextFunction } from 'express'
 import { OutgoingMessage } from 'http'
 
 import { UsersService } from '@services/service.users'
-import { Controller, Inject } from '@libs/lib.di'
+import { Controller, Inject } from '@helpers/helper.dependecyInjection'
 import { APIResponse } from '@helpers/helper.apiResponse'
 
 @Controller()
