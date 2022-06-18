@@ -11,7 +11,7 @@ import { PromotionsModel } from '@models/model.promotions'
   {
     token: 'PromotionsModel',
     useFactory: (): ObjectLiteral => {
-      return Context.get(PromotionsModel).repository
+      return Context.get(PromotionsModel).model
     }
   }
 ])

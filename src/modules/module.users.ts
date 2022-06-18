@@ -11,7 +11,7 @@ import { UsersModel } from '@models/model.users'
   {
     token: 'UsersModel',
     useFactory: (): ObjectLiteral => {
-      return Context.get(UsersModel).repository
+      return Context.get(UsersModel).model
     }
   }
 ])
