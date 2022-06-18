@@ -20,13 +20,14 @@ class App {
     this.port = process.env.PORT as any
   }
 
-  private module(): void {
-    Container.resolve(AppModule)
-  }
-
   private connection(): Promise<Connection> {
     useContainer(TypeContainer)
     return createConnection()
+  }
+
+  private async config(): Promise<void> {
+    this.app.disable('x-powered-by')
+    Container.resolve(AppModule)
   }
 
   private async routes(): Promise<void> {
@@ -40,7 +41,7 @@ class App {
 
   public async main(): Promise<void> {
     await this.connection()
-    await this.module()
+    await this.config()
     await this.routes()
     await this.run()
   }

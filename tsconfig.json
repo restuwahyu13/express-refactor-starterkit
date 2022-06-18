@@ -10,13 +10,13 @@
       "*": ["node_modules/"],
       "@/*": ["*"],
       "@controllers/*": ["controllers/*"],
-      "@di/*": ["di/*"],
       "@helpers/*": ["helpers/*"],
       "@libs/*": ["libs/*"],
       "@models/*": ["models/*"],
       "@routes/*": ["routes/*"],
       "@services/*": ["services/*"],
-      "@modules/*": ["modules/*"]
+      "@modules/*": ["modules/*"],
+      "@entities/*": ["entities/*"]
     },
     "strict": true,
     "esModuleInterop": true,
@@ -28,7 +28,7 @@
     "skipLibCheck": true,
     "importHelpers": true,
     "isolatedModules": true,
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noImplicitAny": false,
     "noImplicitThis": false

@@ -1,14 +1,13 @@
 import { Repository } from 'typeorm'
 import { StatusCodes as status } from 'http-status-codes'
 
-import { Users } from '@models/model.users'
-import { Model, ModelTransform } from '@di/di.users'
-import { InjectTransform, Service } from '@libs/lib.di'
+import { Users } from '@entities/entitie.users'
+import { Inject, Service } from '@libs/lib.di'
 import { apiResponse } from '@helpers/helper.apiResponse'
 
 @Service()
 export class UsersService {
-  constructor(@InjectTransform(Model, ModelTransform) private model: Repository<Users>) {}
+  constructor(@Inject('UsersModel') public model: Repository<Users>) {}
 
   async getAllUsers(): Promise<any> {
     try {

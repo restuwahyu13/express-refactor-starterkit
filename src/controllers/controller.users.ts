@@ -13,9 +13,9 @@ export class UsersController {
     return async (req: Request, res: Response, next: NextFunction): Promise<OutgoingMessage> => {
       try {
         const response: APIResponse = await this.service.getAllUsers()
-        return res.status(response.stat_code).json(response)
+        return res.status(200).json(response)
       } catch (e: any) {
-        return res.status(e.stat_code).json(e)
+        return res.status(400).json(e)
       }
     }
   }

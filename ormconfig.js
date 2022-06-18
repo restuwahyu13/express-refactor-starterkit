@@ -1,6 +1,6 @@
 const path = require('path')
 
-const pathEntitiesDir = !['production', 'staging'].includes(process.env.NODE_ENV) ? 'src/models/*.ts' : 'dist/models/*.js'
+const pathEntitiesDir = !['production', 'staging'].includes(process.env.NODE_ENV) ? 'src/entities/*.ts' : 'dist/entities/*.js'
 const pathMigrationDir = !['production', 'staging'].includes(process.env.NODE_ENV) ? 'src/database/migrations' : 'dist/database/migrations'
 
 const entitiesDir = path.resolve(process.cwd(), pathEntitiesDir)
