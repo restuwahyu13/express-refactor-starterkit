@@ -10,7 +10,7 @@
       "*": ["node_modules/"],
       "@/*": ["*"],
       "@configs/*": ["configs/*"],
-      "@dto/*": ["dto/*"],
+      "@dtos/*": ["dtos/*"],
       "@controllers/*": ["controllers/*"],
       "@interfaces/*": ["interfaces/*"],
       "@helpers/*": ["helpers/*"],
