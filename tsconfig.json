@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "outDir": "dist",
+    "moduleResolution": "Node",
+    "target": "ESNext",
+    "typeRoots": ["node_modules/@types/"],
+    "paths": {
+      "*": ["node_modules/"],
+      "@/*": ["*"],
+      "@controllers/*": ["controllers/*"],
+      "@di/*": ["di/*"],
+      "@helpers/*": ["helpers/*"],
+      "@libs/*": ["libs/*"],
+      "@models/*": ["models/*"],
+      "@routes/*": ["routes/*"],
+      "@services/*": ["services/*"],
+      "@modules/*": ["modules/*"]
+    },
+    "strict": true,
+    "esModuleInterop": true,
+    "downlevelIteration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowUmdGlobalAccess": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "importHelpers": true,
+    "isolatedModules": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "noImplicitAny": false,
+    "noImplicitThis": false
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["dist", "node_modules"]
+}
