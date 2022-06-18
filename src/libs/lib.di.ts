@@ -6,7 +6,7 @@ export {
   inject as Inject,
   injectAll as InjectAll,
   injectWithTransform as InjectTransform,
-  delay as Delay,
+  delay as Mutex,
   registry as Module,
   container as Container
 } from 'tsyringe'
