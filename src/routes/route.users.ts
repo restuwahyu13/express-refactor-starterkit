@@ -12,7 +12,7 @@ export class UsersRoute {
   }
 
   main(): Router {
-    this.router.get('/', (req: Request, res: Response) => this.controller.ping(req, res))
+    this.router.get('/', (req: Request, res: Response) => this.controller.getAllUsers(req, res))
 
     return this.router
   }

@@ -10,7 +10,7 @@ import { apiResponse } from '@helpers/helper.apiResponse'
 export class UsersService {
   constructor(@InjectTransform(Model, ModelTransform) private model: Repository<Users>) {}
 
-  async ping(): Promise<any> {
+  async getAllUsers(): Promise<any> {
     try {
       const getAllUsers: Users[] = await this.model.find({})
       return Promise.resolve(apiResponse(status.OK, 'Express Rest API Clean Architecture', getAllUsers, null))

@@ -9,9 +9,9 @@ import { APIResponse } from '@helpers/helper.apiResponse'
 export class UsersController {
   constructor(@Inject('UsersService') private service: UsersService) {}
 
-  async ping(req: Request, res: Response): Promise<OutgoingMessage> {
+  async getAllUsers(req: Request, res: Response): Promise<OutgoingMessage> {
     try {
-      const response: APIResponse = await this.service.ping()
+      const response: APIResponse = await this.service.getAllUsers()
       return res.status(response.stat_code).json(response)
     } catch (e: any) {
       return res.status(e.stat_code).json(e)
