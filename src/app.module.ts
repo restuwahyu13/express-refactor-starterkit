@@ -7,15 +7,15 @@ import { UsersModule } from '@modules/module.users'
 
 @Registry([
   {
-    token: 'UsersModule',
-    useFactory: (): Router => {
-      return Container.resolve(UsersModule).route.main()
-    }
-  },
-  {
     token: 'UsersModel',
     useFactory: (): ObjectLiteral => {
       return TypeContainer.get(UsersModel).repository
+    }
+  },
+  {
+    token: 'UsersModule',
+    useFactory: (): Router => {
+      return Container.resolve(UsersModule).route.main()
     }
   }
 ])

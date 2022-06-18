@@ -1,4 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, DeleteDateColumn, UpdateDateColumn } from 'typeorm'
+import { IUsers } from '@interfaces/interface.users'
 
 class DatabaseSchema {
   @PrimaryGeneratedColumn({ type: 'integer', unsigned: true })
@@ -33,4 +34,4 @@ class DatabaseSchema {
 }
 
 @Entity()
-export class Users extends DatabaseSchema {}
+export class Users extends DatabaseSchema implements IUsers {}
