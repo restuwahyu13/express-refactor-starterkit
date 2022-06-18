@@ -1,9 +1,13 @@
 export {
-  injectable as Injectable,
+  autoInjectable as Injectable,
+  autoInjectable as Service,
+  autoInjectable as Controller,
+  autoInjectable as Route,
   inject as Inject,
+  injectAll as Injects,
   injectWithTransform as InjectTransform,
   delay as Delay,
-  registry as Registry,
+  registry as Module,
   container as Container
 } from 'tsyringe'
 import { Transform as Transforms } from 'tsyringe/dist/typings/types'

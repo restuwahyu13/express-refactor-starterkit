@@ -1,13 +1,13 @@
 import { Router, Request, Response } from 'express'
 
 import { UsersController } from '@controllers/controller.users'
-import { Injectable, Inject } from '@libs/lib.di'
+import { Route } from '@libs/lib.di'
 
-@Injectable()
+@Route()
 export class UsersRoute {
   private router: Router
 
-  constructor(@Inject('UsersController') private controller: UsersController) {
+  constructor(private controller: UsersController) {
     this.router = Router({ strict: true, caseSensitive: true })
   }
 

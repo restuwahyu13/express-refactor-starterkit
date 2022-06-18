@@ -3,10 +3,10 @@ import { StatusCodes as status } from 'http-status-codes'
 
 import { Users } from '@models/model.users'
 import { Model, ModelTransform } from '@di/di.users'
-import { InjectTransform, Injectable } from '@libs/lib.di'
+import { InjectTransform, Service } from '@libs/lib.di'
 import { apiResponse } from '@helpers/helper.apiResponse'
 
-@Injectable()
+@Service()
 export class UsersService {
   constructor(@InjectTransform(Model, ModelTransform) private model: Repository<Users>) {}
 

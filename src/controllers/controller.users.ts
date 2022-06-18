@@ -2,12 +2,12 @@ import { Request, Response } from 'express'
 import { OutgoingMessage } from 'http'
 
 import { UsersService } from '@services/service.users'
-import { Injectable, Inject } from '@libs/lib.di'
+import { Controller } from '@libs/lib.di'
 import { APIResponse } from '@helpers/helper.apiResponse'
 
-@Injectable()
+@Controller()
 export class UsersController {
-  constructor(@Inject('UsersService') private service: UsersService) {}
+  constructor(private service: UsersService) {}
 
   async ping(req: Request, res: Response): Promise<OutgoingMessage> {
     try {
