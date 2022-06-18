@@ -6,7 +6,7 @@ import { Connection, createConnection, useContainer } from 'typeorm'
 import { Container as TypeContainer } from 'typeorm-typedi-extensions'
 
 import { Container, Injectable } from '@libs/lib.di'
-import { UsersModule } from '@modules/module.users'
+import { AppModule } from '@/app.module'
 
 @Injectable()
 class App {
@@ -14,10 +14,14 @@ class App {
   private server: Server
   private port: number
 
-  constructor(private users: UsersModule) {
+  constructor() {
     this.app = express()
     this.server = http.createServer(this.app)
     this.port = process.env.PORT as any
+  }
+
+  private module(): void {
+    Container.resolve(AppModule)
   }
 
   private connection(): Promise<Connection> {
@@ -26,7 +30,7 @@ class App {
   }
 
   private async routes(): Promise<void> {
-    this.app.use(this.users.route.main())
+    this.app.use(Container.resolve('UsersModule'))
   }
 
   private async run(): Promise<void> {
@@ -36,6 +40,7 @@ class App {
 
   public async main(): Promise<void> {
     await this.connection()
+    await this.module()
     await this.routes()
     await this.run()
   }

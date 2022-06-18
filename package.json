@@ -2,13 +2,13 @@
   "name": "express-refactor-starterkit",
   "version": "1.0.0",
   "description": "This is code for refactoring express-rest-api-clean-architecture",
-  "main": "./dist/app.js",
+  "main": "./dist/main.js",
   "scripts": {
-    "ts-watch": "nodemon -w src -x ts-node -r tsconfig-paths/register src/app.ts",
+    "ts-watch": "nodemon -w src -x ts-node -r tsconfig-paths/register src/main.ts",
     "ts-bin:dev": "cross-env NODE_OPTIONS='--max_old_space_size=8192 --v8-pool-size=8 --zero-fill-buffers --no-global-search-paths --napi-modules' NODE_ENV=development npm run ts-watch",
     "ts-bin:prod": "cross-env NODE_OPTIONS='--max_old_space_size=8192 --v8-pool-size=8 --zero-fill-buffers --no-global-search-paths --no-addons' tsc -P tsconfig.json && tsc-alias",
     "cleanup": "rimraf dist",
-    "start": "node dist/app.js",
+    "start": "node dist/main.js",
     "build": "npm run cleanup && npm run ts-bin:prod",
     "dev": "npm run ts-bin:dev"
   },
