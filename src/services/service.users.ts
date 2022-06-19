@@ -6,7 +6,7 @@ import { apiResponse } from '@helpers/helper.apiResponse'
 
 @Service()
 export class UsersService {
-  constructor(@Inject('UsersModel') public model: Repository<Users>) {}
+  constructor(@Inject('UsersModel') private model: Repository<Users>) {}
 
   async getAllUsers(): Promise<any> {
     try {

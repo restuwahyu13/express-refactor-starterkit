@@ -33,7 +33,7 @@
     "skipLibCheck": true,
     "importHelpers": true,
     "noUnusedLocals": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "noUnusedParameters": false,
     "noImplicitAny": false,
     "noImplicitThis": false
