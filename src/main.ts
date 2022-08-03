@@ -38,12 +38,12 @@ class App {
     return createConnection()
   }
 
-  private async config(): Promise<void> {
+  private config(): void {
     this.app.disable('x-powered-by')
     Container.resolve<AppModule>(AppModule)
   }
 
-  private async middleware(): Promise<void> {
+  private middleware(): void {
     this.app.use(bodyParser.json({ limit: '5mb' }))
     this.app.use(bodyParser.urlencoded({ extended: true }))
     this.app.use(helmet({ contentSecurityPolicy: false }))
@@ -68,21 +68,21 @@ class App {
     }
   }
 
-  private async route(): Promise<void> {
+  private route(): void {
     this.app.use(`${this.version}/users`, Container.resolve<Router>('UsersModule'))
     this.app.use(`${this.version}/promotions`, Container.resolve<Router>('PromotionsModule'))
   }
 
-  private async globalRoute(): Promise<void> {
+  private globalRoute(): void {
     this.app.all(['/', '/api/v1'], (_req: Request, res: Response): OutgoingMessage => res.status(status.OK).json(apiResponse(status.OK, 'Server Ping !')))
   }
 
-  private async run(): Promise<void> {
+  private run(): void {
     const serverInfo: string = `Server is running on port: ${this.port}`
     this.server.listen(this.port, () => console.info(serverInfo))
   }
 
-  public async main(): Promise<void> {
+  public main(): void {
     await this.connection()
     await this.config()
     await this.middleware()
@@ -96,6 +96,6 @@ class App {
  * @description boostraping app and run app with env development / production
  */
 
-;(async function () {
-  if (process.env.NODE_ENV != 'test') await Container.resolve<App>(App).main()
+;(function () {
+  if (process.env.NODE_ENV != 'test') Container.resolve<App>(App).main()
 })()
